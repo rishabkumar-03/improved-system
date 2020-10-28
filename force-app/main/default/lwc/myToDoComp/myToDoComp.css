@@ -1,0 +1,13 @@
+.container{
+    padding: 16px;
+    overflow-y: scroll;
+    display: block;
+}
+
+.time{
+    font-size: 4rem;
+}
+
+.greeting{
+    font-size: 2rem;
+}

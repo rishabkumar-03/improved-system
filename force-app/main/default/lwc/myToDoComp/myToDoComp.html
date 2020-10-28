@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="My ToDo List" icon-name="standard:contact_list">
+        <lightning-layout  class="slds-align_absolute-center slds-text-align_center container" multiple-rows>
+            <lightning-layout-item  size="12"> <div class="time">{time}</div> </lightning-layout-item>
+            <lightning-layout-item  size="12"> <div class="greeting">{message}</div></lightning-layout-item>
+        
+            <lightning-layout-item  size="12"  class="slds-m-top_large">
+                <lightning-layout>
+                    <lightning-layout-item >
+                        <lightning-input type="text" placeholder="What's onyour mind ?" variant="label-hidden"></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item >
+                        <lightning-button icon-name="utility:add" onclick={addItemHandler}></lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item >
+            <div> My Tasks</div>
+            <lightning-layout-item size="12">
+                <template for:each={todos} for:item="todo">
+                    <c-todo-task-com key={todo.todoId}  todo-id={todo.todoId} todo-name={todo.todoName} > </c-todo-task-com>
+                </template>
+           </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

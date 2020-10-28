@@ -1,0 +1,21 @@
+.custom-spacing-product-name{
+    line-height: 80px;
+    font-size: 25px;
+    color: #333333;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.custom-spacing-price{
+    margin-left: 20px;
+    font-size: 25px;
+    color:#990000;
+    margin-bottom: 3px;
+    font-weight: bold;
+}
+
+img{
+    height : 50%;
+    width :  50%;
+    border-radius : 5px;
+}

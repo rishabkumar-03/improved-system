@@ -1,0 +1,81 @@
+<template>
+    <template if:true={modalStatus}>
+        <section role="dialog" 
+                 tabindex="-1" 
+                 aria-labelledby="modal-heading-01" 
+                 aria-modal="true"
+                 aria-describedby="modal-content-id-1" 
+                 class="slds-modal slds-fade-in-open">
+
+            <div class="slds-modal__container">
+
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close 
+                            slds-button_icon-inverse"
+                            title="Close" 
+                            onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close" 
+                                alternative-text="close" 
+                                variant="inverse"
+                                size="small">
+                            </lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+
+                    <div>
+                        {productName}
+                    </div>
+                    <div class="slds-p-around_small custom-spacing float-center">
+                        <p class="font font-color">${price}</p>
+                        <p class="font">Quantity</p>
+                
+                        <lightning-button 
+                            icon-name="utility:dash" 
+                            onclick={handleDecrement} 
+                            disabled={flag}
+                            variant="destructive-text">
+                        </lightning-button>
+                
+                        <p class="font">{quantity}</p>
+                
+                        <lightning-button 
+                            icon-name="utility:add" 
+                            onclick={handleIncrement}
+                            variant="destructive-text">
+                        </lightning-button>
+                
+                        <p class="font font-color">${totalPrice}</p>
+                    </div>
+        
+                </header>
+
+                <div class="slds-modal__content slds-p-around_small">
+                    <div class="float-right">
+                        <p>Subtotal ${totalPrice}</p>
+                        <p>Shipping and discounts will be added at checkout.</p>
+                        <div>
+                            <input class="custom-line-height" 
+                                   type="checkbox" 
+                                   onchange={handleCheckBoxChange}>
+                            <label for="terms">
+                                   I agree with the
+                                   <a href="#"> terms and conditions.</a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_success" 
+                            onclick={submitDetails}
+                            disabled={disableCheckout} 
+                            title="Check Out">Check Out
+                    </button>
+                </footer>
+
+            </div>
+
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

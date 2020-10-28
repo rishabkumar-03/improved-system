@@ -1,0 +1,12 @@
+<template>
+    <lightning-combobox 
+            label="Products" 
+            options={productOptions} 
+            value={value} 
+            onchange={handleProductChange}
+            placeholder="Choose Products" ></lightning-combobox>  
+            <lightning-button-group>
+                
+            </lightning-button-group>
+            <lightning-button-icon icon-name="utility:close" variant="brand" onclick={handleReset}></lightning-button-icon>
+</template>

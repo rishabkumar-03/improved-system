@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-m-around_medium">
+        <lightning-card title="Product list" icon-name="custom:custom57">
+            <template for:each={products} for:item='p'>
+                <div key={p.Id}>
+                    <c-lwc-usecase2-child-comp product={p}></c-lwc-usecase2-child-comp>
+                    <!--<lightning-layout padding="around-medium">
+                        <lightning-layout-item>
+                            <c-lwc-usecase2-child-comp product={p}></c-lwc-usecase2-child-comp>
+                        </lightning-layout-item>
+                    </lightning-layout> -->
+                </div>
+            </template>
+        </lightning-card>
+    </div>
+</template>

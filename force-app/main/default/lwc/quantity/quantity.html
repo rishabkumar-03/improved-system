@@ -1,0 +1,46 @@
+<template>
+
+    <div class="slds-p-around_small custom-spacing">
+
+        <p class="font">Quantity</p>
+
+        <lightning-button 
+            icon-name="utility:dash" 
+            onclick={handleDecrement} 
+            disabled={flag}
+            variant="destructive-text">
+        </lightning-button>
+
+        <p class="font">{quantity}</p>
+
+        <lightning-button 
+            icon-name="utility:add" 
+            onclick={handleIncrement}
+            variant="destructive-text">
+        </lightning-button>
+
+
+    </div>
+
+    <div class="custom-spacing-add-button">
+        <template if:true={flagTest}>
+            <lightning-button 
+                label="Add to Cart" 
+                onclick={showModal}
+                variant="destructive">
+            </lightning-button>
+        </template>
+    
+        <!-- <template if:true={flag}>
+            <lightning-button label="Sold Out"></lightning-button>
+        </template> -->
+    </div>
+
+    <c-modalpopup 
+        product-name={productName} 
+        quantity={quantity} 
+        price={price}
+        total-price={totalprice}>
+    </c-modalpopup>
+
+</template>

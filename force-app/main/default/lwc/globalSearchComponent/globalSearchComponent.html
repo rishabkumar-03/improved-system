@@ -1,0 +1,19 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-wrap">
+            <template for:each={products} for:item='p'>
+                <div key={p.Id} class="slds-col slds-size_4-of-12">
+                    <div class="slds-p-around_medium">
+                        <a data-value={p.Name} onclick={navigatetoDetails}>
+                            <lightning-tile>
+                                <img src={p.Product_Image__c} ></img>
+                                <h3><b>{p.Name}</b>, By {p.Makers__c}</h3>
+                                <p>${p.Price__c}</p>
+                            </lightning-tile>
+                        </a>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

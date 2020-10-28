@@ -1,0 +1,31 @@
+.float-right{
+    text-align: right;
+    margin-right: 0;
+    margin-left: auto;
+    float: right;
+}
+
+.custom-spacing{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 300px;
+}
+
+.custom-spacing-add-button{
+    padding: 20px;
+    margin-top: 5px;
+}
+
+.font{
+    font-size: 30x;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    line-height: 30px;
+}
+
+.custom-line-height{
+    line-height: 10px;
+    margin-right: 2px;
+}

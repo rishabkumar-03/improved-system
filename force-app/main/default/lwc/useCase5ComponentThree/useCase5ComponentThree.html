@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-p-around_medium lgc-bg">
+        <a onclick={navigatetoDetails}>
+            <lightning-tile label={name} href="" type="media">
+                <lightning-avatar size="large"
+                slot="media" 
+                src={picture}
+                fallback-icon-name="standard:person_account"
+                 ></lightning-avatar>
+                <ul class="slds-has-dividers_right">
+                    <li class="slds-item">{phone}</li>
+                    <li class="slds-item">{email}</li>
+                </ul>
+            </lightning-tile>
+        </a>            
+    </div>  
+</template>

@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Products">
+        <template for:each={products} for:item='p'>
+            <div key={p.Id} class="slds-col slds-size_4-of-12">
+                <ul class="slds-has-dividers_around-space">
+                    <li class="slds-item">
+                        <article class="slds-tile slds-tile_board">
+                            <a onclick={navigatetoDetails}>
+                                <img src={p.Product_Image__c} ></img>
+                                <h3><b>{p.Name}</b>, By {p.Makers__c}</h3>
+                                <p>${p.Price__c}</p> 
+                            </a>
+                        </article>       
+                    </li>
+                </ul>               
+            </div>
+        </template>
+        <c-paginator-component total-records={total_records} 
+                page-size={pageSize}
+                page-no={page}
+                total-pages={total_pages}
+                onprevious={previousHandler}
+                onnext={nextHandler}>
+            </c-paginator-component>
+    </lightning-card>
+</template>

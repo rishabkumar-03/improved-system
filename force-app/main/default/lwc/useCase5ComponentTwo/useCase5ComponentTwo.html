@@ -1,0 +1,11 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-wrap">
+            <template for:each={contacts} for:item='c'>
+                <div key={c.Id} class="slds-col slds-size_4-of-12">
+                    <c-use-case5-component-three name = {c.Name} phone = {c.Phone} email = {c.Email} record-id = {c.Id}></c-use-case5-component-three>
+                </div>
+            </template>
+        </div>
+    </lightning-card>   
+</template>

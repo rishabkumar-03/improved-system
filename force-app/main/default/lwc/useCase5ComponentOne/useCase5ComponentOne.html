@@ -1,0 +1,18 @@
+<template>
+    <div class="slds-var-medium_around">
+        <lightning-tabset>
+            <lightning-tab label="Search Contacts" icon-name="standard:contact">
+                <lightning-card>
+                    <lightning-input 
+                        name = "user_input"
+                        type="text"  
+                        vairant="label-hidden"
+                        placeholder="Name, State or City"
+                        onchange={handleInput}
+                        ></lightning-input>         
+                <c-use-case5-component-two contacts = {contacts}></c-use-case5-component-two>
+                </lightning-card>
+            </lightning-tab>
+        </lightning-tabset>
+    </div>
+</template>

@@ -1,0 +1,13 @@
+<template>
+    <lightning-tile>
+        <img src={product_image} alt="Picture"></img>
+        <p class="slds-truncate custom-spacing-product-name" 
+            title="Product">{productName}
+        </p>
+        <p class="slds-truncate custom-spacing-price" title="Price">${price}</p>
+        <c-quantity
+            price={price}
+            product-name={productName}>
+        </c-quantity>
+    </lightning-tile>
+</template>

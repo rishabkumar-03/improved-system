@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="My SFDC Accounts" icon-name="standard:account">
+        <lightning-button label="Get Accounts" onclick={handleClick} variant="brand" ></lightning-button>
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item>
+                <template for:each={accounts} for:item="acc">
+                    <c-presentation-child-component key={acc.Id} acc-name={acc.Name} acc-phone={acc.Phone} ></c-presentation-child-component>
+                </template>
+            </lightning-layout-item>
+            <template if:true={accFromButton}>
+                <lightning-datatable key-field="id" data={accFromButton} columns={columns} ></lightning-datatable>
+            </template>
+            
+            <!--<template if:true={accFromButton}>
+                <lightning-layout-item>
+                    <template for:each={accFromButton} for:item="acc">
+                        <c-presentation-child-component key={acc.Id} acc-name={acc.Name} acc-phone={acc.Phone} ></c-presentation-child-component>
+                    </template>
+                </lightning-layout-item> 
+            </template>-->
+        </lightning-layout> 
+    </lightning-card>
+    
+</template>

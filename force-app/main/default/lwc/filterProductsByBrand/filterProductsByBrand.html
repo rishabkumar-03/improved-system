@@ -1,0 +1,9 @@
+<template>
+    <lightning-combobox 
+            label="Brands" 
+            options={brandOptions} 
+            value={value} 
+            onchange={handleBrandChange}
+            placeholder="Choose Brands" ></lightning-combobox>
+    <c-filter-products-by-name brand={brand}></c-filter-products-by-name>
+</template>

@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Contacts" icon-name="standard:contact">
+        <div class="slds-m-arond_medium">
+                <template for:each={contacts.data} for:item='c'>
+                    <div key={c.Id}>
+                        <lightning-layout>
+                            <lightning-layout-item size="3" padding="around-small">
+                                <p>Name: {c.Name}</p>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="around-small">
+                                <p>Phone:<lightning-formatted-phone value={c.Phone}></lightning-formatted-phone></p>
+                            </lightning-layout-item> 
+                            <lightning-layout-item padding="around-small">
+                                <p>Email:<lightning-formatted-email value={c.Email}></lightning-formatted-email></p>
+                            </lightning-layout-item>   
+                    </lightning-layout> 
+                    </div>
+                </template>
+        </div>
+    </lightning-card>
+</template>

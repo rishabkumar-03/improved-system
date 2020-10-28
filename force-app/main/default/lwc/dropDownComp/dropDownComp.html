@@ -1,0 +1,15 @@
+<template>
+    <lightning-combobox 
+                label="Brands" 
+                options={brandOptions} 
+                value={value} 
+                onchange={handleBrandChange}
+                placeholder="Choose Brands" ></lightning-combobox>
+        <lightning-combobox 
+                label="Products" 
+                options={productOptions} 
+                value={value} 
+                onchange={handleProductChange}
+                placeholder="Choose Products" ></lightning-combobox>  
+                <div> Selected Product : {product}</div> 
+</template>

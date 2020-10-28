@@ -1,0 +1,19 @@
+<template>
+    <lightning-layout horizontal-align="center">
+        <lightning-layout-item padding="horizontal-small">
+            <lightning-button icon-name="utility:back" onclick={previousHandler} disabled={disablePrevious} ></lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item padding="horizontal-small">
+            <p>{totalRecords} products  &nbsp;</p> 
+        </lightning-layout-item>
+        <lightning-layout-item padding="horizontal-small">
+            <p>.</p> 
+        </lightning-layout-item>
+        <lightning-layout-item padding="horizontal-small">
+            <p>page {pageNo} out of {totalPages}</p>
+        </lightning-layout-item>
+        <lightning-layout-item padding="horizontal-small">
+            <lightning-button icon-name="utility:forward" onclick={nextHandler} disabled={disableNext}></lightning-button>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

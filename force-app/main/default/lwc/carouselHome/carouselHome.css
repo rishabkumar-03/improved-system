@@ -1,0 +1,15 @@
+.slds-carousel__image {
+    margin: 0;
+    padding: 0;
+    object-fit: contain;
+    width: 1500px;
+    height: 800px;
+}
+
+.test{
+    position: absolute;
+    object-fit: contain;
+    width: 1500px;
+    height: 800px;
+    object-position: center center;
+}
