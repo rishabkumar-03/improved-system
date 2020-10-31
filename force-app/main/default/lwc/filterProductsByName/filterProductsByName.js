@@ -12,6 +12,10 @@ export default class FilterProductsByName extends LightningElement {
     value = '';
     prod_options = [ {value : '', label : 'None'}];
 
+    connectedCallback(){ 
+        this.subscribeMC();
+    }
+
     @wire(MessageContext) messageContext;
 
     @wire(getDropDownProducts,{ brand : '$brand'}) wiredProducts({error, data}){ 
@@ -27,6 +31,20 @@ export default class FilterProductsByName extends LightningElement {
 
     get productOptions(){ 
         return this.prod_options;
+    }
+
+    subscribeMC(){ 
+        this.subscription = subscribe(
+            this.messageContext,
+            SAMPLEMC, (message) => {
+                this.handleMessage(message);
+            }, {scope:APPLICATION_SCOPE});
+    }
+
+    handleMessage(message){ 
+        if(message.inputType == 'dropDownBrand'){ 
+            this.brand = message.inputMessage;
+        }
     }
 
     handleProductChange(event){ 

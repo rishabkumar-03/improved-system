@@ -1,12 +1,14 @@
 <template>
-    <lightning-button-group>
-        <lightning-button icon-name="utility:apps" 
-            variant="destructive-text" 
-            onclick={handleGrid} 
-            class="viewButton"></lightning-button>
-        <lightning-button icon-name="utility:list" 
-            variant="destructive-text" 
-            onclick={handleList} 
-            class="viewButton"></lightning-button>   
-    </lightning-button-group>
+    <div class="view-buttons">
+        <lightning-button-group>
+            <lightning-button icon-name="utility:apps" 
+                variant="destructive-text" 
+                onclick={handleGrid} 
+                class="viewButton"></lightning-button>
+            <lightning-button icon-name="utility:list" 
+                variant="destructive-text" 
+                onclick={handleList} 
+                class="viewButton"></lightning-button>   
+        </lightning-button-group>
+    </div>
 </template>

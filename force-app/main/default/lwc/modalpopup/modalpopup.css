@@ -33,3 +33,7 @@
 .font-color{
     color: #990000;
 }
+
+.float-left-delete{
+    float: left;
+}

@@ -9,7 +9,7 @@ export default class GlobalSearchComponent extends LightningElement {
     @api search_global = '';
     chocolate_picture = choc;
 
-    @wire(MessageContext) messageContext;
+    //@wire(MessageContext) messageContext;
 
     @wire(getGlobalSearch,{searchItem : '$search_global'}) getWiredProducts({error,data}){ 
         if(data){ 
@@ -24,18 +24,13 @@ export default class GlobalSearchComponent extends LightningElement {
         const received = event.currentTarget.dataset.value;
         console.log('Received from anchor tag : ', received);
         this[NavigationMixin.Navigate]({
-            type: 'standard__navItemPage',
+            type: 'standard__component',
             attributes: { 
-                // recordId : this.recordId,             
-                // objectApiName: 'Product__c',
-                // actionName: 'home'
-                apiName : 'Checkout'
+                componentName : "c__checkoutComponent"
+            },
+            state : { 
+                c__productName : received
             }
     });
-    const message = { 
-        inputMessage : received,
-        inputType : 'checkout'
-    }
-    publish(this.messageContext, SAMPLEMC, message);
-    }
+}
 }

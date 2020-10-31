@@ -1,0 +1,73 @@
+<template>
+
+<lightning-card>    
+  <div class="slds-grid slds-wrap">
+    <div class="slds-col slds-size_1-of-2">
+     <p class="slds-p-horizontal_small">
+      <lightning-input type="text" label="Email" value={getRegRecord.Name} onchange={nameInpChange}></lightning-input>
+     </p>
+     <div class="slds-grid slds-wrap">
+      <div class="slds-col slds-size_1-of-2">
+     <p class="slds-p-horizontal_small">
+      <lightning-input type="text" label="First Name" value={getRegRecord.firstname} onchange={firstNameInpChange}></lightning-input>
+     </p>
+        </div>
+     
+        <div class="slds-col slds-size_1-of-2">
+     <p class="slds-p-horizontal_small">
+      <lightning-input type="text" label="Last Name" value={getRegRecord.lastname} onchange={lastNameInpChange}></lightning-input>
+     </p>
+</div>
+</div>
+     <p class="slds-p-horizontal_small">
+      <lightning-input type="text" label="Company Name" value={getRegRecord.comp} onchange={compNameInpChange}></lightning-input>
+     </p>
+
+     <p class="slds-p-horizontal_small">
+      <lightning-input type="text" label="Address" value={getRegRecord.add} onchange={addNameInpChange}></lightning-input>
+     </p>
+     <!--
+     <p class="slds-p-horizontal_small">
+      <lightning-input type="text" label="Appartment" value={getRegRecord.app} onchange={appNameInpChange}></lightning-input>
+     </p>
+    -->
+     <p class="slds-p-horizontal_small">
+      <lightning-input type="text" label="city" value={getRegRecord.city} onchange={cityNameInpChange}></lightning-input>
+     </p>
+  
+     <p class="slds-p-horizontal_small">
+      <lightning-input type="text" label="state"></lightning-input>
+     </p>
+     <p class="slds-p-horizontal_small">
+      <lightning-input type="text" label="country" value={getRegRecord.country} onchange={countryNameInpChange}></lightning-input>
+     </p>
+  
+    
+
+   <div slot="footer">
+    <div class="slds-align_absolute-center">     
+    <lightning-button label="Submit" onclick={saveAccountAction} variant="brand"  class="slds-m-left_x-small"  ></lightning-button>
+  </div>
+  </div>
+    </div>
+  <div class="slds-col slds-size_1-of-2">
+
+    <c-order-pagess-child product-name={productName} 
+    totalprice={totalprice}
+    totalquantity={totalquantity}
+    emailid={Emailval} 
+    lastname={lastname1}  
+    firstname={firstnameval} 
+    maillingstreet={addressval} 
+    mailingcity={cityval} 
+    mailingcontry={countryval} 
+    currentamount={totalprice}></c-order-pagess-child>
+    </div>
+
+  </div>
+  
+    </lightning-card>
+
+   
+ 
+    </template>

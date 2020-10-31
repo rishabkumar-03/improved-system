@@ -5,7 +5,7 @@
                 <ul class="slds-has-dividers_around-space">
                     <li class="slds-item">
                         <article class="slds-tile slds-tile_board">
-                            <a onclick={navigatetoDetails}>
+                            <a data-value={p.Name} onclick={navigatetoDetails}>
                                 <img src={p.Product_Image__c} ></img>
                                 <h3><b>{p.Name}</b>, By {p.Makers__c}</h3>
                                 <p>${p.Price__c}</p> 

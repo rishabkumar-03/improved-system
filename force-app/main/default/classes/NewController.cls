@@ -90,4 +90,15 @@ public with sharing class NewController {
         return [Select Product_Image__c, Category_Name__c from Product__c Where Name LIKE :product_Name];
     }
 
+    // @AuraEnabled(cacheable=true)
+    // public static string methodName(String prodName, Decimal qty){
+    //     String prod_name = '%' + prodName + '%';
+    //     Product__c quantity = [Select Quantity__c From Product__c Where Name LIKE 'prod_name']
+    //     try {
+            
+    //     } catch (Exception e) {
+    //         throw new AuraHandledException(e.getMessage());
+    //     }
+    // }
+
 }

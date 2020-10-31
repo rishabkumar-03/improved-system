@@ -1,0 +1,74 @@
+<template>
+   <lightning-card>
+        <lightning-tile  type="media">
+            <img src={product_image} alt="Product Image" ></img> 
+        </lightning-tile>
+
+        <div class="slds-align_absolute-center">     
+        <div class="slds-grid slds-wrap">
+            <lightning-layout>
+                <lightning-layout-item>
+                    <div >
+                        <lightning-input placeholder="Enter Discount Code" 
+                            variant="label-hidden"
+                            value={getorderinputvalues.couponcode} 
+                            onchange={discountFun}></lightning-input>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <div>
+                            <lightning-button label="Apply Now"  onclick={handleApply} variant="neutral" icon-name="utility:magicwand" class="slds-m-left_x-small"></lightning-button>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+        </div>
+        
+        <br/><br/>
+        <div class="slds-border_top order-container">
+            <lightning-layout>
+                <lightning-layout-item size="6" padding="horizontal-medium">
+                    <h2>Sub Total : </h2>      
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="horizontal-medium">
+                    <h3><b>${totalprice}.00</b></h3>                    
+                </lightning-layout-item>
+            </lightning-layout> <br/>
+            <lightning-layout>
+                <lightning-layout-item size="6" padding="horizontal-medium">
+                    <h2>Taxes and Charges :</h2>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="horizontal-medium">
+                    <p>$0.00</p>                   
+                </lightning-layout-item>
+            </lightning-layout>                   
+        </div>
+
+        <div class="slds-border_top">
+            <lightning-layout>
+                <lightning-layout-item size="6" padding="horizontal-medium">
+                    <h2>Total Amount :</h2>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" padding="horizontal-medium">
+                    <p><b>${totalamount}.00</b></p>                   
+                </lightning-layout-item>
+            </lightning-layout> 
+        </div>
+
+        <!-- <div class="slds-border_top">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                <h3>Total</h3>
+                </div>
+                <div class="slds-col">
+                    <p>{totalprice}</p>
+                </div>
+            </div>
+        </div> -->
+
+        <br></br>
+        <div class="slds-align_absolute-center">            
+        <lightning-button label="Order Now" onclick={OrderHandl} variant="success" icon-name="standard:checkout" class="slds-m-left_x-small"></lightning-button>
+        </div>
+   </lightning-card>
+</template>

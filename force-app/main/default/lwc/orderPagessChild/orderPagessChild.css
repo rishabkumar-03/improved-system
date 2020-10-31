@@ -1,0 +1,19 @@
+img{ 
+    float:left;
+    width:100px;
+    height:120x;
+    border-radius: 5px;
+    border : 0.5px solid #F0F8FF;
+}
+
+img:hover {
+    transform: scale(2, 2 );
+    box-shadow: 0 0 2px 1px rgba(228, 241, 254, 1);
+    transition-timing-function: ease;
+}
+
+.order-container { 
+    background-color : #F8F8F8 ;
+    height : 80px;
+    font-style : italic;
+}

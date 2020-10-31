@@ -13,7 +13,7 @@ import { refreshApex } from '@salesforce/apex';
 
 export default class ProjectMainComponent extends NavigationMixin(LightningElement) { 
     @api recordId;
-    @api total_records;
+    @api total_records = 8;
     @api pageSize = 6;
     @api total_pages = 3;
     @api page = 1;
@@ -30,10 +30,6 @@ export default class ProjectMainComponent extends NavigationMixin(LightningEleme
 
     @wire(MessageContext) messageContext;
 
-    connectedCallback(){ 
-        this.subscribeMC();
-    }
-
     @wire(getProducts,{ prodName : '$searchkey', 
             catName : '$category_name',
             brand : '$brand',
@@ -48,20 +44,17 @@ export default class ProjectMainComponent extends NavigationMixin(LightningEleme
             this.products = data;
             console.log('Data received',data);
             this.error = undefined;
+            
         }if(error){ 
             console.error(error);
             this.data = undefined;
         }
     }
 
-    
-
-    @wire(getTotalProducts) received({error, data}){ 
-        if(data){ 
-            this.total_records = data;
-        }
-    };
-
+    connectedCallback(){ 
+        this.subscribeMC();
+        refreshApex(this.products);     
+    }
 
     render(){ 
         return this.productTileGrid ? productTileGrid : productTileList ;
@@ -99,12 +92,17 @@ export default class ProjectMainComponent extends NavigationMixin(LightningEleme
             this.productTileGrid = message.inputMessage;
             console.log('View received',this.productTileGrid);
         }
+        if(message.inputType == 'dropDownBrand'){ 
+            this.brand = message.inputMessage;
+            this.page = 1;
+        }
         if(message.inputType == 'dropDownProduct'){ 
             this.searchkey = message.inputMessage;
             this.page = 1;
         }
         if(message.inputType == 'reset'){ 
             this.searchkey = message.inputMessage;
+            this.brand='';
             this.page = 1;
         }
         // if(message.inputType == 'global'){ 
@@ -151,10 +149,4 @@ export default class ProjectMainComponent extends NavigationMixin(LightningEleme
             }
     });
 }
-    // const message = { 
-    //     inputMessage : received,
-    //     inputType : 'checkout'
-    // }
-    // publish(this.messageContext, SAMPLEMC, message);
-    // }
 }

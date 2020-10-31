@@ -1,15 +1,21 @@
-.slds-carousel__image {
+/* .slds-carousel_image {
     margin: 0;
     padding: 0;
     object-fit: contain;
     width: 1500px;
-    height: 800px;
+    height: 400px;
 }
+
+.carousel-inner > .item > img {
+    height:360px;    
+    object-fit: contain;   
+}
+
 
 .test{
     position: absolute;
     object-fit: contain;
     width: 1500px;
-    height: 800px;
+    height: 400px;
     object-position: center center;
-}
+} */

@@ -1,6 +1,9 @@
 import { LightningElement, wire, api } from 'lwc';
 import getDropDownBrands from '@salesforce/apex/NewController.getDropDownBrands';
 import getProducts from '@salesforce/apex/NewController.getProducts';
+import { publish,subscribe, unsubscribe, APPLICATION_SCOPE, MessageContext } from 'lightning/messageService';
+import SAMPLEMC from '@salesforce/messageChannel/MyMessageChannel__c';
+
 
 let i=0;
 
@@ -27,6 +30,8 @@ export default class FilterProductsByBrand extends LightningElement {
     //     }
     // }
 
+    //@wire(MessageContext) messageContext;
+
     @wire(getProducts,{ prodName : '$searchkey', 
             catName : '$category_name',
             brand : '$brand_name',
@@ -52,5 +57,10 @@ export default class FilterProductsByBrand extends LightningElement {
     handleBrandChange(event){ 
         const selectedOption = event.detail.value;
         this.brand = selectedOption;
+        // const message = { 
+        //     inputMessage : this.brand,
+        //     inputType : 'dropDownBrand'
+        // }
+        // publish(this.messageContext, SAMPLEMC, message);
     }
 }
